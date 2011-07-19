@@ -861,7 +861,11 @@ public class ZMQ {
          * @return true if send was successful, false otherwise.
          */
         public native boolean send (byte [] msg, int flags);
-
+        
+        public boolean sendmsg(byte [] msg, int flags) {
+        	return send (msg,flags);
+        }
+        
         /**
          * Receive a message.
          * 
@@ -870,7 +874,11 @@ public class ZMQ {
          * @return the message received, as an array of bytes; null on error.
          */
         public native byte [] recv (int flags);
-
+        
+        public byte [] recvmsg (int flags){
+        	return recv (flags);
+        }
+        
         /**
          * Class constructor.
          * 
